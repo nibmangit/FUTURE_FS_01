@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
+import Contacts from "./pages/Contacts";
 
 function App() { 
 
@@ -29,6 +30,13 @@ function App() {
               className="py-24 px-4 sm:px-6 lg:px-8"
             >
               <Projects />
+            </section>
+
+            <section
+              id="contact" 
+              className="py-24 px-4 sm:px-6 lg:px-8"
+            >
+              <Contacts />
             </section>
             
             <Footer />

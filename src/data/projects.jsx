@@ -18,7 +18,7 @@ export const PROJECTS = [
   {
     title: 'Smart Event Hub',
     description: 'Smart Event Hub is a full-stack event management platform built with React, Tailwind CSS, and Django REST Framework. Users can create, update, and delete their own events, view events created by others, and RSVP to events.',
-    techStack: ["React", "Tailwind CSS", "Django REST Framework", "JWT Authentication", "MySQL (or your DB)"],
+    techStack: ["React", "Tailwind CSS", "Django REST Framework", "JWT Authentication", "MySQL"],
     imagePlaceholder: '/projectScreenshots/event.png',
     githubLink: 'https://github.com/nibmangit/Event-hub-frontend',
     demoLink: 'https://event-hub-front.netlify.app/',
@@ -26,7 +26,7 @@ export const PROJECTS = [
   {
     title: "Quastion and Answer-S-P",
     description:
-      "A question-answer student platform built with React and (Backend in progress), allowing users to post questions, answer, and interact securely with JWT authentication.",
+      "A question-answer student platform built with React and (Backend in progres), allowing users to post questions, answer, and interact securely with JWT authentication.",
     techStack: ["React", "Tailwind CSS"],
     imagePlaceholder: "/projectScreenshots/qa.png",
     githubLink: "https://github.com/nibmangit/QandA-Platform",

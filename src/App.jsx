@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contacts from "./pages/Contacts";
+import Resume from "./pages/Resume";
 
 function App() { 
 
@@ -30,6 +31,13 @@ function App() {
               className="py-24 px-4 sm:px-6 lg:px-8"
             >
               <Projects />
+            </section>
+
+            <section
+              id="resume" 
+              className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-900 border-t border-b border-gray-800"
+            >
+              <Resume />
             </section>
 
             <section

@@ -3,6 +3,7 @@ import { COLOR } from "./colors/color";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Projects from "./pages/Projects";
 
 function App() { 
 
@@ -15,12 +16,19 @@ function App() {
                 >
               <Home />
             </section>
-            
+
             <section
             id="about" 
             className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-900 border-t border-b border-gray-800"
             >
               <About />  
+            </section>
+
+            <section
+              id="projects" 
+              className="py-24 px-4 sm:px-6 lg:px-8"
+            >
+              <Projects />
             </section>
             
             <Footer />

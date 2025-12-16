@@ -1,12 +1,13 @@
 import { ChevronRight, Github } from 'lucide-react';
 import { COLOR } from '../colors/color';
+import AnimatedWraper from './AnimatedWrapper';
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, index }) => {
   const { title, description, imagePlaceholder, techStack, githubLink, demoLink } = project;
   
   return (
+    <AnimatedWraper delay={index * 150} animation="fadeInUp">
     <div className="group bg-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-amber-500/20 transition duration-500 transform hover:scale-[1.02] border border-gray-700/50">
-      
       <div className="h-48 bg-gray-700 p-4 flex items-center justify-center text-center">
         {imagePlaceholder ? (
             <img
@@ -53,6 +54,7 @@ const ProjectCard = ({ project }) => {
         </div>
       </div>
     </div>
+    </AnimatedWraper>
   );
 };
 

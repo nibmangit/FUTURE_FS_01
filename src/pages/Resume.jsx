@@ -1,18 +1,21 @@
 import { Download, FileText } from 'lucide-react'
 import {COLOR} from '../colors/color'
 import Button from '../components/Button'
+import AnimatedWrapper from '../components/AnimatedWrapper'
 
 function Resume() {
     return (
         <div className="max-w-4xl mx-auto text-center space-y-8">
+            <AnimatedWrapper animation="fadeIn">
             <h2 className="text-4xl font-extrabold text-white">
                 My <span className={COLOR.ACCENT_COLOR}>Resume</span>
             </h2>
             <p className="text-xl text-gray-400">
                 Download my complete CV for a detailed overview of my professional experience, education, and achievements.
             </p>
-            
-            <div className="flex justify-center pt-6 space-x-4">
+            </AnimatedWrapper>
+
+            <AnimatedWrapper delay={200} animation="fadeInUp" className="flex justify-center space-x-4 pt-6">
                 <Button
                     onClick={() => {
                     const link = document.createElement('a');
@@ -32,8 +35,9 @@ function Resume() {
                 >
                     Open in New Tab
                 </Button>
-            </div> 
+            </AnimatedWrapper>
 
+            <AnimatedWrapper delay={400} animation="fadeInIn">
             <div className="mt-12 w-full h-96 bg-gray-800 rounded-xl flex items-center justify-center border-4 border-dashed border-gray-700 p-4 shadow-inner">
                 <iframe
                     src="/resume/Nibretu_Mengaw_Resume.pdf"
@@ -41,6 +45,7 @@ function Resume() {
                     className="w-full h-full rounded-lg" 
                 ></iframe>
             </div>
+            </AnimatedWrapper>
         </div>
     )
 }

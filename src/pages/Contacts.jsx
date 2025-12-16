@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Button from '../components/Button'
 import {Mail, CheckCircle} from 'lucide-react'
 import {COLOR} from '../colors/color'
+import AnimatedWrapper from '../components/AnimatedWrapper'
+
 function Contacts() { 
       const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
       const [submitStatus, setSubmitStatus] = useState(null); 
@@ -35,17 +37,19 @@ function Contacts() {
         };
 
     return (
-        <div className="max-w-4xl mx-auto space-y-12">
-                     
-            <header className="text-center space-y-4">
-                <h2 className="text-4xl font-extrabold text-white">
-                Get <span className={COLOR.ACCENT_COLOR}>In Touch</span>
-                </h2>
-                <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                Have a project idea or just want to chat? Send me a message! I'm always open to new opportunities.
-                </p>
-            </header>
+        <div className="max-w-4xl mx-auto space-y-12 mb-2">
+            <AnimatedWrapper animation="fadeIn">
+                <header className="text-center space-y-4">
+                    <h2 className="text-4xl font-extrabold text-white">
+                    Get <span className={COLOR.ACCENT_COLOR}>In Touch</span>
+                    </h2>
+                    <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Have a project idea or just want to chat? Send me a message! I'm always open to new opportunities.
+                    </p>
+                </header>
+            </AnimatedWrapper>
          
+            <AnimatedWrapper delay={200} animation="fadeInUp">
             <form onSubmit={handleFormSubmit} className="space-y-6 bg-gray-900 p-8 sm:p-10 rounded-2xl shadow-2xl border border-gray-800">
                  
                 <div>
@@ -120,6 +124,7 @@ function Contacts() {
                 )}
                 </div>
             </form>
+            </AnimatedWrapper>
         
         </div>
     )

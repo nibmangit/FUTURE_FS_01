@@ -1,40 +1,54 @@
 import React, { useState } from 'react'
 import Button from '../components/Button'
+import axios from 'axios';
 import {Mail, CheckCircle} from 'lucide-react'
 import {COLOR} from '../colors/color'
 import AnimatedWrapper from '../components/AnimatedWrapper'
 
 function Contacts() { 
       const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
-      const [submitStatus, setSubmitStatus] = useState(null); 
+      const [submitStatus, setSubmitStatus] = useState(null);
+      const [errorMsg, setErrorMsg] = useState(null); 
  
       const handleFormChange = (e) => {
             setContactForm({ ...contactForm, [e.target.name]: e.target.value });
             setSubmitStatus(null);
         };
 
-        const handleFormSubmit = (e) => {
+        const handleFormSubmit = async (e) => {
             e.preventDefault();
             setSubmitStatus('submitting');
-        
+            setErrorMsg(null);
+ 
             if (!contactForm.name || !contactForm.email || !contactForm.message) {
-            setSubmitStatus('error');
-            setTimeout(() => setSubmitStatus(null), 3000);
-            return;
+                setErrorMsg('Please fill out all fields correctly.');
+                setSubmitStatus(null);
+                return;
             }
+
             if (!/\S+@\S+\.\S+/.test(contactForm.email)) {
-            setSubmitStatus('error');
-            setTimeout(() => setSubmitStatus(null), 3000);
-            return;
+                setErrorMsg('Please enter a valid email address.');
+                setSubmitStatus(null);
+                return;
             }
-            // Simulate form submission
-            setTimeout(() => {
-            console.log('Form Submitted:', contactForm);
-            setSubmitStatus('success');
-            setContactForm({ name: '', email: '', message: '' }); // Clear form
-            setTimeout(() => setSubmitStatus(null), 5000);
-            }, 2000);
-        };
+
+            try {
+                const response = await axios.post('http://127.0.0.1:8000/api/contact/', contactForm); 
+                if (response.data?.message) {
+                    setSubmitStatus('success');
+                    setContactForm({ name: '', email: '', message: '' });
+ 
+                    setTimeout(() => setSubmitStatus(null), 5000);
+                } else {
+                    setErrorMsg('Server error: unable to send message.');
+                    setSubmitStatus(null);
+                }
+            } catch (error) {
+                console.error(error);
+                setErrorMsg('Server error: unable to send message.');
+                setSubmitStatus(null);
+            }
+        }; 
 
     return (
         <div className="max-w-4xl mx-auto space-y-12 mb-2">
@@ -117,9 +131,9 @@ function Contacts() {
                     </p>
                 )}
 
-                {submitStatus === 'error' && (
+                {errorMsg && (
                     <p className="text-red-400 font-medium">
-                    Please fill out all fields correctly.
+                    {errorMsg}
                     </p>
                 )}
                 </div>

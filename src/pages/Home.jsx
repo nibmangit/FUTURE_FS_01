@@ -1,13 +1,15 @@
 import {FileText, Code} from 'lucide-react'
 import { COLOR } from '../colors/color';
 import Button from '../components/Button';
+import AnimatedWrapper from '../components/AnimatedWrapper';
 
 function Home() {
     return (
         <> 
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-blue-500/10 blur-[150px]"></div>
           <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-amber-500/10 blur-[150px]"></div>
-
+          
+         <AnimatedWrapper animation="fadeIn" threshold={0.1} delay={0} className="w-full">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-center md:text-left z-10 space-y-12 md:space-y-0">
             
           <div className="md:w-1/2 space-y-6 animate-fadeInLeft">
@@ -51,7 +53,8 @@ function Home() {
               </div>
             </div>
           </div>
-        </div>  
+        </div> 
+        </AnimatedWrapper> 
         </>
     )
 }

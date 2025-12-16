@@ -7,12 +7,9 @@ const AnimatedWrapper = ({ children, delay = 0, className = '', animation = 'fad
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
+      ([entry]) => { 
+          setIsVisible(entry.isIntersecting); 
+        },
       {
         root: null,
         rootMargin: '0px',

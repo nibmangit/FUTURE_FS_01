@@ -29,15 +29,13 @@ This project serves as a **portfolio-ready application** demonstrating modern fu
 ## 🛠 Technologies Used
 
 **Frontend**
-- React.js
+- Vite/React.js
 - Tailwind CSS
-- JavaScript
-- Vite
 
 **Backend**
 - Python
 - Django + Django REST Framework
-- PostgreSQL / SQLite (DB optional)
+- Django SQLite3
 - SMTP for email handling
 
 **Tools**
@@ -66,7 +64,7 @@ Install dependencies:
 
 npm install
 
-And install other dependency inside the packege.json file
+And install other dependencies inside the packege.json file
 
 
 Start the development server:
@@ -101,6 +99,11 @@ EMAIL_HOST_PASSWORD=your_app_password
 Run Django server:
 
 python manage.py runserver
+
+If Problem Occurs remove the venv and create again:
+python -m venv venv
+
+Then Install all the requirments like i described above.
 
 👨‍💻 Author
 

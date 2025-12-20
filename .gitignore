@@ -12,6 +12,19 @@ dist
 dist-ssr
 *.local
 
+# Virtual environments
+venv/
+env/
+.venv/
+ 
+
+__pycache__/
+
+db.sqlite3
+
+# Environment variables
+.env
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

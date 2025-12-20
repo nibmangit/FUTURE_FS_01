@@ -1,4 +1,5 @@
 import resend
+from decouple import config
 from django.conf import settings
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -15,7 +16,8 @@ def submit_message(request):
 
         serializer.save()
 
-        resend.api_key = settings.config('RESEND_API_KEY')
+        # Corrected way to get the API key
+        resend.api_key = config('RESEND_API_KEY')
 
         try:
             params = {

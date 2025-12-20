@@ -50,8 +50,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -101,11 +101,13 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 CORS_ALLOWED_ORIGINS = [ 
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://future-fs-01-nib-man.vercel.app",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
-    "https://future-fs-portfolio-backend.onrender.com"
+    "https://future-fs-portfolio-backend.onrender.com",
+    "https://future-fs-01-nib-man.vercel.app",
 ]
 
 # Password validation

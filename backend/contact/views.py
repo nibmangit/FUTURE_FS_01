@@ -1,32 +1,38 @@
+import resend
+from django.conf import settings
 from rest_framework.decorators import api_view
-from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework import status
-from django.core.mail import send_mail
 from .serializers import ContactMessageSerializer
-from django.conf import settings
 
 @api_view(["POST"])
 def submit_message(request):
-    serializer = ContactMessageSerializer(data = request.data)
+    serializer = ContactMessageSerializer(data=request.data)
     if serializer.is_valid():
         name = serializer.validated_data['name']
         email = serializer.validated_data['email']
         message = serializer.validated_data['message']
 
-        subject = f"New Contact Message from {name}"
-        body = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
-        recipient_list = ['nibretumengaw@gmail.com'] 
-
-        send_mail(
-                subject,
-                body,
-                settings.EMAIL_HOST_USER,
-                recipient_list,
-                fail_silently=False,
-            )
-
         serializer.save()
-        return Response({"message": "Message sent successfully."}, status=status.HTTP_201_CREATED)
-    
+
+        resend.api_key = settings.config('RESEND_API_KEY')
+
+        try:
+            params = {
+                "from": "onboarding@resend.dev",
+                "to": "nibretumengaw@gmail.com",
+                "subject": f"New Contact Message from {name}",
+                "html": f"""
+                    <p><strong>Name:</strong> {name}</p>
+                    <p><strong>Email:</strong> {email}</p>
+                    <p><strong>Message:</strong></p>
+                    <p>{message}</p>
+                """
+            }
+            resend.Emails.send(params)
+            return Response({"message": "Message sent successfully."}, status=status.HTTP_201_CREATED)
+            
+        except Exception:
+            return Response({"message": "Saved to database, but email notification failed."}, status=status.HTTP_201_CREATED)
+
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

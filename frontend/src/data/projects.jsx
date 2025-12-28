@@ -47,7 +47,7 @@ export const PROJECTS = [
     "A neo-futuristic music streaming UI inspired by Spotify, built with React and Tailwind CSS. The project focuses on advanced UI/UX, glassmorphism, neon effects, responsive layouts, SEO-friendly semantic structure, and performance optimization as part of the Future Interns Task 3.",
   techStack: ["React (Vite)", "Tailwind CSS v4", "Firebase", "Firestore"],
   imagePlaceholder: "/projectScreenshots/cyberbeat.png",
-  githubLink: "https://github.com/your-username/FUTURE_FS_03",
+  githubLink: "https://github.com/nibmangit/FUTURE_FS_03",
   demoLink: "https://future-fs-03-spotify-rebrand.vercel.app/"
 }
 

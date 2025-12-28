@@ -2,62 +2,76 @@
 
 ## 🚀 Project Overview
 This repository contains the **Full Stack Web Development Internship Project** for the **Future Interns** program.  
-It includes a **React + Tailwind frontend** and a **Django REST backend**, with a functional contact form to receive messages directly via email.  
+It is a **portfolio-ready full-stack application** built with a **React + Tailwind frontend** and a **Django REST backend**.
 
-This project serves as a **portfolio-ready application** demonstrating modern full-stack development skills.
+The project demonstrates **real-world development**, **API integration**, and **production deployment**, including a fully functional **contact form that sends emails in real time**.
 
+---
+
+## 🌍 Live Deployment
+
+- **Frontend (Vercel):** https://future-fs-01-nib-man.vercel.app
 
 ---
 
 ## 🎯 Key Features
 
 ### Frontend
-- Responsive **portfolio website** built with React and Tailwind CSS.
-- Sections include: Home, About, Projects, Resume, Contact.
-- Smooth scroll and animated components for modern UI.
-- Downloadable Resume section.
-- Projects showcase with live demo and GitHub links.
+- Responsive **portfolio website** built with React and Tailwind CSS
+- Sections: Home, About, Projects, Resume, Contact
+- Smooth scrolling and modern UI animations
+- Downloadable resume section
+- Project showcase with live demo and GitHub links
+- Contact form integrated with backend API
 
 ### Backend
-- Django REST API handles **contact form submissions**.
-- Messages sent directly to email using **SMTP**.
-- Secure storage of sensitive credentials using **`.env` file**.
-- CORS enabled to connect frontend and backend safely.
+- Django REST API to handle contact form submissions
+- Sends emails using **SMTP (Gmail)**
+- Input validation using serializers
+- CORS configured for secure frontend-backend communication
+- Environment-based configuration for production deployment
 
 ---
 
 ## 🛠 Technologies Used
 
-**Frontend**
-- Vite/React.js
-- Tailwind CSS
-
-**Backend**
-- Python
-- Django + Django REST Framework
-- Django SQLite3
-- SMTP for email handling
-
-**Tools**
-- Git & GitHub
-- Postman (for API testing)
-- VS Code
-
----
-
-## 📝 Features in Action
-
-- **Portfolio Website:** Interactive, responsive, visually appealing UI.
-- **Project Section:** Showcase frontend/backend projects with tech stack and demo links.
-- **Contact Form:** Submit messages securely; backend sends emails in real-time.
-- **Resume Section:** Downloadable PDF and optional preview.
-
----
-
-## 📂 How to Run the Project
-
 ### Frontend
+- React (Vite)
+- Tailwind CSS
+- Axios
+
+### Backend
+- Django
+- Django REST Framework
+- SQLite3 (development)
+- SMTP (Email service)
+
+### Deployment & Tools
+- **Frontend:** Vercel
+- **Backend:** Render
+- Git & GitHub
+- Postman(API testing)
+- VS Code (writing code)
+
+---
+
+## 🔗 Frontend–Backend Integration
+
+- The frontend communicates with the backend via **REST API** using Axios.
+- CORS is properly configured to allow secure cross-origin requests.
+- Contact form submissions trigger real-time email delivery.
+- Backend environment variables are securely managed using:
+- `.env` file (local development)
+- Render environment variables (production)
+
+---
+
+## 📂 How to Run the Project 
+
+### Frontend 
+
 1. Navigate to the frontend folder:
+   
 ```bash
 cd FUTURE_FS_01/frontend
 Install dependencies:
@@ -122,3 +136,4 @@ Part of the Future Interns Full Stack Web Development Internship (Dec 2025 – J
 Backend credentials are kept secure in .env and ignored in Git.
 
 Frontend and backend are separate directories for clarity.
+

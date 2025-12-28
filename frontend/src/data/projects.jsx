@@ -32,4 +32,23 @@ export const PROJECTS = [
     githubLink: "https://github.com/nibmangit/QandA-Platform",
     demoLink: "https://q-a-s-p.netlify.app/",
   },
+  {
+  title: "Mini Tech E-Commerce Store",
+  description:
+    "A modern mini e-commerce frontend for tech & gadgets built as part of the Future Interns Full Stack Web Development internship. Features include a landing page, product listing with search and filters, cart management, checkout simulation, order confirmation, and frontend authentication using a fake API.",
+  techStack: ["React (Vite)", "Tailwind CSS v4", "Context API","Custom Hook", "React Router"],
+  imagePlaceholder: "/projectScreenshots/minitech.png",
+  githubLink: "https://github.com/nibmangit/FUTURE_FS_02",
+  demoLink: "https://future-fs-02-black.vercel.app/",
+},
+{
+  title: "CyberBeat Music Platform",
+  description:
+    "A neo-futuristic music streaming UI inspired by Spotify, built with React and Tailwind CSS. The project focuses on advanced UI/UX, glassmorphism, neon effects, responsive layouts, SEO-friendly semantic structure, and performance optimization as part of the Future Interns Task 3.",
+  techStack: ["React (Vite)", "Tailwind CSS v4", "Firebase", "Firestore"],
+  imagePlaceholder: "/projectScreenshots/cyberbeat.png",
+  githubLink: "https://github.com/your-username/FUTURE_FS_03",
+  demoLink: "https://future-fs-03-spotify-rebrand.vercel.app/"
+}
+
 ];

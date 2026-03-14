@@ -30,7 +30,7 @@ export const PROJECTS = [
     techStack: ["React", "Tailwind CSS"],
     imagePlaceholder: "/projectScreenshots/qa.png",
     githubLink: "https://github.com/nibmangit/QandA-Platform",
-    demoLink: "https://q-a-s-p.netlify.app/",
+    demoLink: "https://qand-a-platform.vercel.app/",
   },
   {
   title: "Mini Tech E-Commerce Store",

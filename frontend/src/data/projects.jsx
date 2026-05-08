@@ -31,15 +31,15 @@ export const PROJECTS = [
     imagePlaceholder: "/projectScreenshots/qa.png",
     githubLink: "https://github.com/nibmangit/QandA-Platform",
     demoLink: "https://qand-a-platform.vercel.app/",
-  },
+  }, 
   {
-  title: "Mini Tech E-Commerce Store",
+  title: "Mini Tech Full Stack E-Commerce Platform",
   description:
-    "A modern mini e-commerce frontend for tech & gadgets built as part of the Future Interns Full Stack Web Development internship. Features include a landing page, product listing with search and filters, cart management, checkout simulation, order confirmation, and frontend authentication using a fake API.",
-  techStack: ["React (Vite)", "Tailwind CSS v4", "Context API","Custom Hook", "React Router"],
-  imagePlaceholder: "/projectScreenshots/minitech.png",
-  githubLink: "https://github.com/nibmangit/FUTURE_FS_02",
-  demoLink: "https://future-fs-02-black.vercel.app/",
+    "A full-stack e-commerce platform built with React and Django REST Framework featuring customer shopping experience, JWT authentication, cart & checkout flow, Chapa payment integration, and a secure admin dashboard with analytics, product/category management, order tracking, user management, filtering, search, ordering, and pagination.",
+  techStack: [  "React (Vite)", "Tailwind CSS",  "Django", "Django REST Framework",  "JWT Authentication", "Axios", "Context API", "React Router", "Cloudinary", "Chapa Payment" ],
+  imagePlaceholder: "/projectScreenshots/minitech.png", 
+  githubLink: "https://github.com/nibmangit/FUTURE_FS_02", 
+  demoLink: "https://future-fs-02-mini-store.vercel.app/",
 },
 {
   title: "CyberBeat Music Platform",

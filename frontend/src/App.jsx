@@ -8,6 +8,7 @@ import Projects from "./pages/Projects";
 import Contacts from "./pages/Contacts";
 import Resume from "./pages/Resume";
 import Background from "./components/Background";
+import CustomCursor from "./components/CustomCursor";
 
 function App() {
     const homeRef = useRef(null);
@@ -57,6 +58,8 @@ function App() {
   
     return ( 
         <div className={`relative min-h-screen ${COLOR.PRIMARY_COLOR} font-sans scroll-smooth`}>
+
+          <CustomCursor />
              
             <Background />
 

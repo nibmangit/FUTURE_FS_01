@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+@layer base {
+  /* Only hide the cursor on devices that use a mouse (hover capability) */
+  @media (hover: hover) and (pointer: fine) {
+    body {
+      cursor: none;
+    }
+
+    /* Keep the default cursor for interactive elements where it's needed for accessibility */
+    input, 
+    textarea, 
+    [contenteditable="true"] {
+      cursor: text;
+    }
+    
+    /* We want our custom cursor to handle the "pointer" look, 
+       so we force 'none' even on buttons/links */
+    a, 
+    button, 
+    .cursor-pointer {
+      cursor: none;
+    }
+  }
+}

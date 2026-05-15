@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contacts from "./pages/Contacts";
 import Resume from "./pages/Resume";
+import Background from "./components/Background";
 
 function App() {
     const homeRef = useRef(null);
@@ -54,52 +55,63 @@ function App() {
       };
     }, []);
   
-    return (
-        <div className={`min-h-screen ${COLOR.PRIMARY_COLOR} font-sans scroll-smooth`}>
-            <Navbar activeSection={activeSection} />
-            <section
-                id="home"
-                ref={homeRef}
-                className={`scroll-mt-24 min-h-[90vh] flex items-center justify-center p-8 relative overflow-hidden ${COLOR.PRIMARY_COLOR}`}
+    return ( 
+        <div className={`relative min-h-screen ${COLOR.PRIMARY_COLOR} font-sans scroll-smooth`}>
+             
+            <Background />
+
+            <div className="fixed inset-0 pointer-events-none">
+                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-500/10 blur-[120px] animate-pulse"></div>
+                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-amber-500/10 blur-[120px] animate-pulse" style={{ animationDelay: '2s' }}></div>
+            </div>
+ 
+            <div className="relative z-10">
+                <Navbar activeSection={activeSection} />
+                
+                <section
+                    id="home"
+                    ref={homeRef} 
+                    className="scroll-mt-24 min-h-[90vh] flex items-center justify-center p-8 relative overflow-hidden bg-transparent"
+                    >
+                  <Home />
+                </section>
+
+                <section
+                id="about" 
+                ref={aboutRef} 
+                className="scroll-mt-24 py-24 px-4 sm:px-6 lg:px-8 bg-gray-900/80 backdrop-blur-sm border-t border-b border-gray-800"
                 >
-              <Home />
-            </section>
+                  <About />  
+                </section>
 
-            <section
-            id="about" 
-            ref={aboutRef}
-            className="scroll-mt-24 py-24 px-4 sm:px-6 lg:px-8 bg-gray-900 border-t border-b border-gray-800"
-            >
-              <About />  
-            </section>
+                <section
+                  id="projects" 
+                  ref={projectsRef}
+                  className="scroll-mt-24 py-24 px-4 sm:px-6 lg:px-8 bg-transparent"
+                >
+                  <Projects />
+                </section>
 
-            <section
-              id="projects" 
-              ref={projectsRef}
-              className="scroll-mt-24 py-24 px-4 sm:px-6 lg:px-8"
-            >
-              <Projects />
-            </section>
+                <section
+                  id="resume" 
+                  ref={resumeRef}
+                  className="scroll-mt-24 py-24 px-4 sm:px-6 lg:px-8 bg-gray-900/80 backdrop-blur-sm border-t border-b border-gray-800"
+                >
+                  <Resume />
+                </section>
 
-            <section
-              id="resume" 
-              ref={resumeRef}
-              className="scroll-mt-24 py-24 px-4 sm:px-6 lg:px-8 bg-gray-900 border-t border-b border-gray-800"
-            >
-              <Resume />
-            </section>
-
-            <section
-              id="contact"
-              ref={contactRef}
-              className="scroll-mt-24py-24 px-4 sm:px-6 lg:px-8"
-            >
-              <Contacts />
-            </section>
-            
-            <Footer />
+                <section
+                  id="contact"
+                  ref={contactRef}
+                  className="scroll-mt-24 py-24 px-4 sm:px-6 lg:px-8 bg-transparent"
+                >
+                  <Contacts />
+                </section>
+                
+                <Footer />
+            </div>
         </div>
     )
-} ;
+}
 
-export default App
+export default App;

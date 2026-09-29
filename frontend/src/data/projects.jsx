@@ -26,8 +26,8 @@ export const PROJECTS = [
   {
     title: "Quastion and Answer-S-P",
     description:
-      "A question-answer student platform built with React and (Backend in progres), allowing users to post questions, answer, and interact securely with JWT authentication.",
-    techStack: ["React", "Tailwind CSS"],
+      "A question-answer student platform built with React and Django DRF, allowing users to post questions, answer, and interact securely with JWT authentication.",
+    techStack: ["React", "Tailwind CSS", "Django", "DRF", "Axios", "Django channels", "Readis", "websocket"],
     imagePlaceholder: "/projectScreenshots/qa.png",
     githubLink: "https://github.com/nibmangit/QandA-Platform",
     demoLink: "https://qand-a-platform.vercel.app/",
@@ -49,6 +49,16 @@ export const PROJECTS = [
   imagePlaceholder: "/projectScreenshots/cyberbeat.png",
   githubLink: "https://github.com/nibmangit/FUTURE_FS_03",
   demoLink: "https://future-fs-03-spotify-rebrand.vercel.app/"
+},
+
+{
+  title: "ServiceHub Full Stack Platform",
+  description:
+    " Service hub is a full stack project built for local service providers and customers. I let the service providers to create a service and the admin review and approves it after that their service will be public and the customer searchs and send a request to that provider and the provider accept it and do the service. ",
+  techStack: ["React (Vite)", "Tailwind CSS v4", "Django", "DRF", "Django channel", "Redis", "websocket"],
+  imagePlaceholder: "/projectScreenshots/service-hub.png",
+  githubLink: "https://github.com/nibmangit/servicehub",
+  demoLink: "https://servicehub-fro.vercel.app/"
 }
 
 ];
